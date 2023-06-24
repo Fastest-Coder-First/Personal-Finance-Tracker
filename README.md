@@ -33,15 +33,15 @@ Create an OAuth client ID in Google cloud console with the below info:
 
 
 # Authorized JavaScript origins
-
+'''
 http://localhost:4000
 https://localhost:4000
-
+'''
 # Authorized redirect URIs
-
+'''
 http://localhost:4000/api/auth/google/callback
 https://localhost:4000/api/auth/google/callback
-
+'''
 
 Create a *secrets.env* file in the root directory with content like below:
 
