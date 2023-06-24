@@ -1,0 +1,579 @@
+/* =========================== Global variables =========================== */
+
+:root {
+    --lightBlue: #C7EBFF;
+    --mediumBlue: #438FFC;
+    --deepBlue: #18277C;
+    --backgroundClr: white;
+    --loaderClr: #438FFC;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+}
+
+input {
+    font-family: 'Rubik', sans-serif;
+}
+
+/* ======================================================================== */
+
+
+
+
+
+/* =========================== Custom scrollbar =========================== */
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2e3f4d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2ea5fa;
+}
+
+/* ======================================================================== */
+
+
+
+
+
+/* ========================== Loading screen ============================== */
+
+@keyframes loader-5-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-5-2 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(24px, 0, 0) scale(.5);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes loader-5-3 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(-24px, 0, 0) scale(.5);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes loader-5-4 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(0, 24px, 0) scale(.5);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes loader-5-5 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(0, -24px, 0) scale(.5);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+#loader_block {
+    background: var(--backgroundClr);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    z-index: 100000;
+    transition: opacity 300ms ease-in-out;
+}
+
+.loader-5 {
+    scale: 2;
+    height: 32px;
+    width: 32px;
+    animation: loader-5-1 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+.loader-5::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    margin: auto;
+    width: 8px;
+    height: 8px;
+    background: var(--loaderClr);
+    border-radius: 50%;
+    animation: loader-5-2 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+.loader-5::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 8px;
+    height: 8px;
+    background: var(--loaderClr);
+    border-radius: 50%;
+    animation: loader-5-3 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+.loader-5 span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 32px;
+    width: 32px;
+}
+
+.loader-5 span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: 0;
+    margin: auto;
+    width: 8px;
+    height: 8px;
+    background: var(--loaderClr);
+    border-radius: 50%;
+    animation: loader-5-4 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+.loader-5 span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 8px;
+    height: 8px;
+    background: var(--loaderClr);
+    border-radius: 50%;
+    animation: loader-5-5 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+/* ======================================================================== */
+
+
+
+
+
+
+/* ========================== Header section ============================== */
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#headerLottie {
+    width: 40rem;
+    margin-left: -8rem;
+}
+
+#headerText>div:nth-of-type(1) {
+    font-size: 1.5rem;
+}
+
+#headerText>div:nth-of-type(2) {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#headerText>div:nth-of-type(3) {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: -0.4rem;
+    color: var(--deepBlue);
+}
+
+#headerCardWrap {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.headerCard {
+    background: linear-gradient(200deg, #8ae0fa 0%, #3187ff 100%);
+    width: fit-content;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    color: white;
+    border: 0.15rem solid #ffffff;
+    box-shadow: 0 0.5rem 0rem var(--mediumBlue);
+}
+
+.headerCard img {
+    width: 2rem;
+    margin-right: 0.2rem;
+    margin-bottom: -0.2rem;
+}
+
+.headerCard>div:nth-of-type(2) {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 0.2rem;
+}
+
+#topButtonWrap {
+    display: flex;
+    margin-top: 0.75rem;
+    margin-bottom: 1.4rem;
+}
+
+/* ======================================================================== */
+
+
+
+
+
+
+/* ======================== Configuration section ========================== */
+
+.optionsCard {
+    background: linear-gradient(200deg, #8ae0fa 0%, #3187ff 100%);
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    border: 0.15rem solid #ffffff;
+    box-shadow: 0 0.5rem 0rem var(--mediumBlue);
+    width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#setBudget {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+
+.inputWrap input {
+    outline: none;
+    border: none;
+    border-radius: 0.3rem 0 0 0.3rem;
+    padding: 0.5rem;
+    width: 7rem;
+}
+
+.inputWrap {
+    display: flex;
+}
+
+.inputWrap div {
+    background: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+    border-left: 0.15rem solid rgb(232, 232, 232);
+    color: black;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--mediumBlue);
+}
+
+.buttonIcon {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: white;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.3rem;
+    color: #1f6fdd;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0.3rem 0 #1f6fdd;
+    border: 0.15rem solid #1f6fdd;
+    transition: .3s;
+}
+
+.buttonIcon img {
+    width: 1.2rem;
+}
+
+.buttonIcon:hover {
+    box-shadow: 0 0rem 0 #1f6fdd;
+    transform: translateY(0.25rem);
+}
+
+#addExpense {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputWrap input {
+    width: 15rem;
+}
+
+#separator {
+    height: 12rem;
+    width: 0.1rem;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#btnsIconWrap {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#setBudgetError,
+#setExpenseError {
+    display: none;
+}
+
+@media (max-width: 1320px) {
+    #header {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    #headerLottie {
+        margin-left: 0rem;
+    }
+
+    .optionsCard {
+        flex-direction: column;
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+    #separator {
+        width: 100%;
+        height: 0.15rem;
+        background: rgba(255, 255, 255, 0.2);
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 650px) {
+    #headerCardWrap {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .headerCard {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #headerText {
+        width: 90%;
+    }
+
+    #headerText>div:nth-of-type(3) {
+        margin-top: 0.2rem;
+        line-height: 2.5rem;
+    }
+
+    #headerLottie {
+        width: 100%;
+    }
+
+    .inputWrap,
+    .inputWrap input {
+        width: 100%;
+        max-width: 80vw;
+    }
+
+    #setBudget,
+    #addExpense {
+        width: 100%;
+    }
+}
+
+/* ======================================================================== */
+
+
+
+
+
+
+/* =========================== Expenses List ============================== */
+
+.expensesList {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.expensesList table {
+    width: 79.5rem;
+    border-collapse: collapse;
+}
+
+.expensesList thead {
+    background: linear-gradient(200deg, #8ae0fa 0%, #3187ff 100%);
+    border: 0.15rem solid #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 0rem var(--mediumBlue);
+    color: white;
+}
+
+.expensesList th,
+.expensesList td {
+    padding: 1rem 0.5rem;
+    text-align: left;
+}
+
+.expensesList input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.expensesList tbody>tr:nth-of-type(1)>td {
+    padding-top: 1.6rem;
+}
+
+.expensesList tbody {
+    color: black;
+    border-bottom: 0.3rem solid var(--mediumBlue);
+}
+
+.expensesList tbody>tr {
+    border-bottom: 0.15rem solid rgba(0, 0, 0, 0.1);
+}
+
+.tableBtns button {
+    padding: 0;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.tableBtns img {
+    height: 1rem;
+    width: 1rem;
+    cursor: pointer;
+    background: #1f6fdd;
+    padding: 0.7rem;
+    border-radius: 0.3rem;
+    transition: 0.5s;
+    will-change: transform;
+}
+
+.tableBtns img:hover {
+    transform: scale(0.95);
+}
+
+.tableBtns {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media (max-width: 1320px) {
+    .expensesList table {
+        width: 90%;
+    }
+}
+
+@media (max-width: 650px) {
+    .tableBtns {
+        flex-direction: column;
+    }
+
+    .expensesList tr>td:nth-of-type(2) input {
+        width: 2.5rem;
+    }
+
+    .expensesList tr>td:nth-of-type(3) input {
+        width: 4rem;
+    }
+}
+
+/* ======================================================================== */
+
+
+
+
+
+
+/* ========================== Footer section ============================== */
+
+#footer {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #128bd6;
+}
+
+#footerBtnsWrap {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+/* ======================================================================== */

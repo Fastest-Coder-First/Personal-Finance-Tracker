@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:type" content="website" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Personal Finance Tracker</title>
+    <meta itemprop="name" content="Personal Finance Tracker" />
+    <meta property="og:title" content="Personal Finance Tracker" />
+    <meta name="twitter:title" content="Personal Finance Tracker" />
+
+    <link rel="icon" href="https://i.imgur.com/CqiziiO.png" />
+    <link rel="apple-touch-icon" href="https://i.imgur.com/CqiziiO.png" />
+    <link rel="shortcut icon" href="https://i.imgur.com/CqiziiO.png" type="image/x-icon" />
+
+    <meta itemprop="image" content="https://i.imgur.com/LkC6mwM.jpg" />
+    <meta name="twitter:image" content="https://i.imgur.com/LkC6mwM.jpg" />
+    <meta name="twitter:image:src" content="https://i.imgur.com/LkC6mwM.jpg" />
+    <meta property="og:image" content="https://i.imgur.com/LkC6mwM.jpg" />
+
+    <meta itemprop="description"
+        content="Keep track of your expenses and budget with ease! Supports local and cloud backup." />
+    <meta property="og:description"
+        content="Keep track of your expenses and budget with ease! Supports local and cloud backup." />
+    <meta name="twitter:description"
+        content="Keep track of your expenses and budget with ease! Supports local and cloud backup." />
+    <meta name="description"
+        content="Keep track of your expenses and budget with ease! Supports local and cloud backup." />
+
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body>
+    <div id="loader_block">
+        <div class="loader-5 center"><span></span></div>
+    </div>
+    <div id="header">
+        <div id="headerLottie">
+            <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ep1tn2ew.json" background="transparent"
+                speed="1" loop autoplay></lottie-player>
+        </div>
+        <div id="headerText">
+            <div>Hello there!</div>
+            <div>Welcome to your</div>
+            <div>Personal Finance Tracker</div>
+
+            <div id="topButtonWrap">
+                <div class="buttonIcon" id="googleAuthBtn">
+                    <img src="./assets/google.svg">
+                    <span id="googleAuthText">Signin with Google</span>
+                </div>
+            </div>
+
+            <div id="headerCardWrap">
+                <div class="headerCard">
+                    <div><img src="./assets/expenditure.svg"> Total expenses</div>
+                    <div id="totalExpenses">0 Rs</div>
+                </div>
+
+                <div class="headerCard">
+                    <div><img src="./assets/budget.svg"> Remaining budget</div>
+                    <div id="remainingBudget">0 Rs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="optionsCard">
+        <div id="setBudget">
+            <div>Set remaining budget</div>
+            <div class="inputWrap">
+                <input id="remainingBudgetInput" type="number" placeholder="00000">
+                <div>Cost</div>
+            </div>
+            <div id="setBudgetError">Invalid inputs!</div>
+            <div id="btnsIconWrap">
+                <div class="buttonIcon" id="saveRemainingBudgetBtn">
+                    <img src="./assets/save.svg">
+                    <span>Update</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="separator"></div>
+
+        <div id="addExpense">
+            <div>New expense</div>
+            <div class="inputWrap left">
+                <input type="text" placeholder="Name of the item you spent on" id="addExpenseName">
+                <div>Title</div>
+            </div>
+            <div class="inputWrap">
+                <input type="date" id="addExpenseDate" />
+                <div>Date</div>
+            </div>
+            <div class="inputWrap">
+                <input type="number" placeholder="00000" id="addExpenseCost">
+                <div>Cost</div>
+            </div>
+            <div id="setExpenseError">Invalid inputs!</div>
+            <div class="buttonIcon" id="addExpenseBtn">
+                <img src="./assets/add.svg">
+                <span>Add</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="expensesList">
+        <table>
+            <colgroup>
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 14.5%;">
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 60%;">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Date</th>
+                    <th>Cost</th>
+                    <th>Item</th>
+                </tr>
+            </thead>
+
+            <tbody id="listBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="footerBtnsWrap">
+        <input id="loadBackupUpload" type='file' hidden accept=".json" />
+        <div class="buttonIcon" id="loadBackupBtn">
+            <img src="./assets/load.svg">
+            <span>Load backup</span>
+        </div>
+        <div class="buttonIcon" id="backupDataBtn">
+            <img src="./assets/save.svg">
+            <span>Backup data</span>
+        </div>
+        <div class="buttonIcon" id="resetAllBtn">
+            <img src="./assets/reset.svg">
+            <span>Reset all</span>
+        </div>
+    </div>
+</body>
+
+</html>
