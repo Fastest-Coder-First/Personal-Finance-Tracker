@@ -17,6 +17,7 @@
 
 ## Team Personal-Finance-Tracker
 
+
 - Jayanth
 - Prashanth
 - Hareessh
@@ -25,28 +26,27 @@
 
 Run the below command in the root directory to install all required packages for the backend server:
 
-
+```
 npm install
-
+```
 
 Create an OAuth client ID in Google cloud console with the below info:
 
-
+```
 # Authorized JavaScript origins
-'''
+
 http://localhost:4000
 https://localhost:4000
-'''
+
 # Authorized redirect URIs
-'''
+
 http://localhost:4000/api/auth/google/callback
 https://localhost:4000/api/auth/google/callback
-'''
+```
 
-Create a *secrets.env* file in the root directory with content like below:
+Create a **secrets.env** file in the root directory with content like below:
 
-
-
+```
 PORT = 4000
 FRONTEND = http://localhost:4000
 MONGO_URI = <MongoDB url>
@@ -54,11 +54,12 @@ GOOGLE_CLIENT_ID = <Client ID from Google cloud console>
 GOOGLE_CLIENT_SECRET = <Client secret from Google cloud console>
 CALLBACK_URL = /api/auth/google/callback
 PASSPORT_SECRET = <anyRandomText>
-
+```
 
 ## Running process
 
 Run the below command in the root directory:
 
-
+```
 node index.js
+```
